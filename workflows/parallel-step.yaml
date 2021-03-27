@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  generateName: steps-
+  generateName: steps-parallel-
   namespace: argocd
 spec:
   entrypoint: deploy-app
@@ -39,6 +39,6 @@ spec:
       image: bitnami/kubectl:latest
       command: [bash, -c]
       args:
-      - sleep 30 && kubectl apply -f {{inputs.parameters.file_name}}
+      - kubectl apply -f {{inputs.parameters.file_name}}
       workingDir: "{{inputs.parameters.file_path}}"
 
