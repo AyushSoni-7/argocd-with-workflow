@@ -1,4 +1,4 @@
 namespaces:
+  - black
   - blue
-  - green
-  - kube-system
+  - red
