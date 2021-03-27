@@ -2,8 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   generateName: kubernetes-serialization-
-  namespace: argo
+  namespace: argocd
 spec:
+  serviceAccountName: workflow-sa
   entrypoint: argocd-namespace
   templates:
   - name: argocd-namespace
@@ -18,7 +19,7 @@ spec:
       command: [bash, -c]
       args:
       - kubectl apply -f namespace.yaml
-      workingDir: /src/argocd-application 
+      workingDir: /src/argocd-application
   - name: argocd-configmap
     inputs:
       artifacts:
