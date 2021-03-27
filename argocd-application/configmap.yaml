@@ -15,7 +15,7 @@ spec:
     repoURL: https://github.com/AyushSoni-7/argocd-with-workflow.git
     targetRevision: main
   destination:
-    configmap: default
+    namespace: default
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
