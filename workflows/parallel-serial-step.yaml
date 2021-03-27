@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   generateName: steps-
+  namespace: argocd
 spec:
   entrypoint: deploy-app
   serviceAccountName: workflow-sa
@@ -24,7 +25,7 @@ spec:
             value: /src/argocd-application
           - name: file_name
             value: configmap.yaml
-    - - name: deploy-configmap
+      - name: deploy-secret
         template: k8s
         arguments:
           parameters:
