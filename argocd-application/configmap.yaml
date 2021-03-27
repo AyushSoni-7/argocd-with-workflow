@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: configmap
+  configmap: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values-cm.yaml
+    path: configmap
+    repoURL: https://github.com/AyushSoni-7/argocd-with-workflow.git
+    targetRevision: main
+  destination:
+    configmap: default
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
