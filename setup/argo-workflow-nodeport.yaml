@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   name: argo-workflow-server-nodeport
-  namespace: argocd
+  namespace: argo
 spec:
   ports:
   - port: 2746
@@ -11,7 +11,7 @@ spec:
     targetPort: 2746
     nodePort: 30084
   selector:
-    app: argo-server
+    app: argo-workflow-server
   type: NodePort
 status:
   loadBalancer: {}

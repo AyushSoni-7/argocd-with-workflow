@@ -1,21 +1,20 @@
 apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
-  name: workflow-role-binding
+  name: workflow-pod-role-binding
 subjects:
 - kind: ServiceAccount
-  name: workflow-sa
+  name: workflow-pod-sa
   namespace: argocd
 roleRef:
-  kind: Role
-  name: workflow-role
+  kind: ClusterRole
+  name: workflow-pod-role
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: Role
+kind: ClusterRole
 metadata:
-  name: workflow-role
-  namespace: argocd
+  name: workflow-pod-role
 rules:
 - apiGroups: [""]
   resources:
@@ -44,6 +43,5 @@ rules:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: workflow-sa
+  name: workflow-pod-sa
   namespace: argocd
-

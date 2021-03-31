@@ -2,8 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   generateName: dag-deploy-app-
+  namespace: argocd
 spec:
-  serviceAccountName: workflow-sa
+  serviceAccountName: workflow-pod-sa
   entrypoint: deploy-app
   templates:
   - name: k8s
