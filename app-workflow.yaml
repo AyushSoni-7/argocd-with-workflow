@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    path: .
+    path: workflows
     repoURL: https://github.com/AyushSoni-7/argocd-with-workflow.git
     targetRevision: main
   destination:
