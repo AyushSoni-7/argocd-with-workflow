@@ -11,7 +11,7 @@ spec:
     helm:
       valueFiles:
       - values-namespace.yaml
-    path: namespace
+    path: manifest/namespace
     repoURL: https://github.com/AyushSoni-7/argocd-with-workflow.git
     targetRevision: main
   destination:

@@ -11,7 +11,7 @@ spec:
     helm:
       valueFiles:
       - values-cm.yaml
-    path: configmap
+    path: manifest/configmap
     repoURL: https://github.com/AyushSoni-7/argocd-with-workflow.git
     targetRevision: main
   destination:
