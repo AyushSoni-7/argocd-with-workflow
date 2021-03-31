@@ -18,7 +18,5 @@
 - To list down endpoints
   - `minikube service list`
 ## Application
-- Apply argocd appliaction which will run the worflow
-   - `kubectl apply -f argo-cd-workflow.yaml`
-- This application run the dag worflow given in workflow folder with name dag.yaml
-- This dag workflow will then run the application and install the helm chart 
+- Apply argo workflow given in the workflow directory
+   - `kubectl apply -f dag.yaml`
