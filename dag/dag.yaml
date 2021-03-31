@@ -61,4 +61,6 @@ spec:
       - name: pods
         dependencies: [deploy-configmap, deploy-secret]
         template: get-pods
-
+      - name: get-pods
+        dependencies: [deploy-configmap, deploy-secret]
+        template: get-pods
