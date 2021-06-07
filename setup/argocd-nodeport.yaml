@@ -23,6 +23,6 @@ spec:
     targetPort: 8080
     nodePort: 30081
   selector:
-    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/component: server
 status:
   loadBalancer: {}
